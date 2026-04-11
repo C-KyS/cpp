@@ -19,10 +19,19 @@ void test01()
     d4.Print();
 }
 
+void test02()
+{
+    Date d1(2026, 4, 11);
+    d1.Print();
+    Date d2 = d1 + 100000;
+    d1.Print();
+    d2.Print();
+}
 
 int main()
 {
-    test01();
+    // test01();
+    test02();
     return 0;
 }
 

@@ -21,15 +21,23 @@ Date::Date(int year, int month, int day)
 Date Date::operator+=(int days)
 {
     _day += days;
-    while(_day > GetYearMonthDays(_year, _month))
+    while (_day > GetYearMonthDays(_year, _month))
     {
         _day -= GetYearMonthDays(_year, _month);
         _month++;
-        if(_month == 13)
+        if (_month == 13)
         {
             _month = 1;
             _year++;
         }
     }
     return *this;
+}
+
+// + 运算符重载, 以天为单位, d2 = d1 + 1000
+Date Date::operator+(int days)
+{
+    Date tmp = *this;
+    tmp += days;    
+    return tmp;
 }
