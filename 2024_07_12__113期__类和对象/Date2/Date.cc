@@ -56,4 +56,40 @@ Date &Date::operator-=(int days)
 // - 运算符重载, 以天为单位
 Date Date::operator-(int days)
 {
+    Date tmp = *this;
+    tmp -= days;
+    return tmp;
+}
+
+// == 重载
+bool Date::operator==(const Date &other)
+{
+}
+// != 重载
+bool Date::operator!=(const Date &other)
+{
+}
+// < 重载
+bool Date::operator<(const Date &other)
+{
+    if (_year < other._year)
+        return true;
+    else if (_year == other._year && _month < other._month)
+        return true;
+    else if (_year == other._year && _month == other._month && _day < other._day)
+        return true;
+    else
+        return false;
+}
+// <= 重载
+bool Date::operator<=(const Date &other)
+{
+}
+// > 重载
+bool Date::operator>(const Date &other)
+{
+}
+// >= 重载
+bool Date::operator>=(const Date &other)
+{
 }

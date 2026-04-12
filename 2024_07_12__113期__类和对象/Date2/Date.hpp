@@ -29,6 +29,19 @@ public:
     // - 运算符重载, 以天为单位
     Date operator-(int days);
 
+    // < 重载
+    bool operator<(const Date& other);
+    // <= 重载
+    bool operator<=(const Date& other);
+    // > 重载
+    bool operator>(const Date& other);
+    // >= 重载
+    bool operator>=(const Date& other);
+    // == 重载
+    bool operator==(const Date& other);
+    // != 重载
+    bool operator!=(const Date& other);
+
     // 打印日期, 格式: 2000-01-01
     void Print()
     {

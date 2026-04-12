@@ -37,12 +37,38 @@ void test03()
     d1.Print();
 }
 
+void test04()
+{
+    Date d1(2024, 7, 13);
+    d1.Print();
+    
+    Date d2 = d1 - 3000;
+    d1.Print();
+    d2.Print();
+}
+
+void test05()
+{
+    Date d1(2024, 7, 12);
+    Date d2(2024, 7, 13);
+    Date d3(2024, 7, 14);
+
+    std::cout << (d1 < d1) << std::endl;
+    d1.Print();
+    std::cout << (d1 < d2) << std::endl;
+    d2.Print();
+    std::cout << (d3 < d2 + 100000) << std::endl;
+    (d2 + 100000).Print();
+}
+
+
 int main()
 {
     // test01();
     // test02();
-    test03();
-    
+    // test03();
+    // test04();
+    test05();
     return 0;
 }
 
