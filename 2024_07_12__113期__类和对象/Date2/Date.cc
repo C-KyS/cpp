@@ -18,7 +18,7 @@ Date::Date(int year, int month, int day)
 }
 
 // += 运算符重载, 以天为单位
-Date Date::operator+=(int days)
+Date &Date::operator+=(int days)
 {
     _day += days;
     while (_day > GetYearMonthDays(_year, _month))
@@ -38,6 +38,22 @@ Date Date::operator+=(int days)
 Date Date::operator+(int days)
 {
     Date tmp = *this;
-    tmp += days;    
+    tmp += days;
     return tmp;
+}
+
+// -= 运算符重载, 以天为单位
+Date &Date::operator-=(int days)
+{
+    _day -= days;
+    while (_day <= 0)
+    {
+        _month - 1 == 0 ? _month = 12, _year-- : _month--;
+        _day += GetYearMonthDays(_year, _month);
+    }
+    return *this;
+}
+// - 运算符重载, 以天为单位
+Date Date::operator-(int days)
+{
 }

@@ -28,10 +28,21 @@ void test02()
     d2.Print();
 }
 
+void test03()
+{
+    Date d1(2026, 4, 11);
+    d1.Print();
+    
+    d1 -= 100000;
+    d1.Print();
+}
+
 int main()
 {
     // test01();
-    test02();
+    // test02();
+    test03();
+    
     return 0;
 }
 

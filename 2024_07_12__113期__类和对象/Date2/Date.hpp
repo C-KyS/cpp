@@ -20,11 +20,14 @@ public:
     }
 
     // += 运算符重载, 以天为单位
-    Date operator+=(int days);
-
+    Date& operator+=(int days);
     // + 运算符重载, 以天为单位
     Date operator+(int days);
 
+    // -= 运算符重载, 以天为单位
+    Date& operator-=(int days);
+    // - 运算符重载, 以天为单位
+    Date operator-(int days);
 
     // 打印日期, 格式: 2000-01-01
     void Print()
