@@ -98,3 +98,17 @@ bool Date::operator>=(const Date &other)
 {
     return *this > other || *this == other;
 }
+
+// 前置++重载, 以天为单位, ++date
+Date &Date::operator++()
+{
+    *this += 1;
+    return *this;
+}
+// 后置++重载, 以天为单位, date++
+Date Date::operator++(int)
+{
+    Date tmp = *this;
+    *this += 1;
+    return tmp;
+}

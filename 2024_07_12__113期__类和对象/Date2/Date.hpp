@@ -20,27 +20,32 @@ public:
     }
 
     // += 运算符重载, 以天为单位
-    Date& operator+=(int days);
+    Date &operator+=(int days);
     // + 运算符重载, 以天为单位
     Date operator+(int days);
 
     // -= 运算符重载, 以天为单位
-    Date& operator-=(int days);
+    Date &operator-=(int days);
     // - 运算符重载, 以天为单位
     Date operator-(int days);
 
     // < 重载
-    bool operator<(const Date& other);
+    bool operator<(const Date &other);
     // <= 重载
-    bool operator<=(const Date& other);
+    bool operator<=(const Date &other);
     // > 重载
-    bool operator>(const Date& other);
+    bool operator>(const Date &other);
     // >= 重载
-    bool operator>=(const Date& other);
+    bool operator>=(const Date &other);
     // == 重载
-    bool operator==(const Date& other);
+    bool operator==(const Date &other);
     // != 重载
-    bool operator!=(const Date& other);
+    bool operator!=(const Date &other);
+
+    // 前置++重载, 以天为单位, ++date
+    Date& operator++();
+    // 后置++重载, 以天为单位, date++
+    Date operator++(int);
 
     // 打印日期, 格式: 2000-01-01
     void Print()

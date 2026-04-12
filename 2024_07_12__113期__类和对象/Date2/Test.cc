@@ -53,12 +53,16 @@ void test05()
     Date d2(2024, 7, 13);
     Date d3(2024, 7, 14);
 
-    std::cout << (d1 < d1) << std::endl;
+    // std::cout << (d1 < d1) << std::endl;
+    // d1.Print();
+    // std::cout << (d1 < d2) << std::endl;
+    // d2.Print();
+    // std::cout << (d3 < d2 + 100000) << std::endl;
+    // (d2 + 100000).Print();
     d1.Print();
-    std::cout << (d1 < d2) << std::endl;
-    d2.Print();
-    std::cout << (d3 < d2 + 100000) << std::endl;
-    (d2 + 100000).Print();
+    (d1++).Print();
+    d1.Print();
+    (++d1).Print();
 }
 
 
