@@ -29,6 +29,9 @@ public:
     // - 运算符重载, 以天为单位
     Date operator-(int days);
 
+    // - 运算符重载, 日期相减, 以天为单位, d2 - d1
+    int operator-(const Date &other);
+
     // < 重载
     bool operator<(const Date &other);
     // <= 重载

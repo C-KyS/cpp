@@ -61,6 +61,36 @@ Date Date::operator-(int days)
     return tmp;
 }
 
+// - 运算符重载, 日期相减, 以天为单位, d2 - d1
+int Date::operator-(const Date &other)
+{
+    int days1 = 0;
+    for (int month = 1; month < _month; month++)
+    {
+        days1 += GetYearMonthDays(_year, month);
+    }
+    days1 += _day - 1;
+    std::cout << "days1: " << days1 << std::endl;
+
+    int days2 = 0;
+    for (int year = other._year; year < _year; year++)
+    {
+        days2 += IsLeapYear(year) ? 366 : 365;
+    }
+    std::cout << "days2: " << days2 << std::endl;
+
+    int days3 = 0;
+    for (int month = 1; month < other._month; month++)
+    {
+        days3 += GetYearMonthDays(other._year, month);
+    }
+    days3 += other._day - 1;
+    std::cout << "days3: " << days3 << std::endl;
+
+    std::cout << "days1 + days2 - days3: " << days1 + days2 - days3 << std::endl;
+    return days1 + days2 - days3;
+}
+
 // == 重载
 bool Date::operator==(const Date &other)
 {

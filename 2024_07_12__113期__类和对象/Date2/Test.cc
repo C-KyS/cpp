@@ -65,6 +65,14 @@ void test05()
     (++d1).Print();
 }
 
+void test06()
+{
+    Date d1(2024, 7, 12);
+    Date d2(2008, 11, 11);
+    d1.Print();
+    d2.Print();
+    std::cout << (d1 - d2) << std::endl;
+}
 
 int main()
 {
@@ -72,7 +80,8 @@ int main()
     // test02();
     // test03();
     // test04();
-    test05();
+    // test05();
+    test06();
     return 0;
 }
 
