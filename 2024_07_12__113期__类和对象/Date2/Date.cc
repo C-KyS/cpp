@@ -64,10 +64,12 @@ Date Date::operator-(int days)
 // == 重载
 bool Date::operator==(const Date &other)
 {
+    return _year == other._year && _month == other._month && _day == other._day;
 }
 // != 重载
 bool Date::operator!=(const Date &other)
 {
+    return !(*this == other);
 }
 // < 重载
 bool Date::operator<(const Date &other)
@@ -84,12 +86,15 @@ bool Date::operator<(const Date &other)
 // <= 重载
 bool Date::operator<=(const Date &other)
 {
+    return *this < other || *this == other;
 }
 // > 重载
 bool Date::operator>(const Date &other)
 {
+    return !(*this <= other);
 }
 // >= 重载
 bool Date::operator>=(const Date &other)
 {
+    return *this > other || *this == other;
 }
