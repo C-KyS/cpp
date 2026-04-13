@@ -142,3 +142,18 @@ Date Date::operator++(int)
     *this += 1;
     return tmp;
 }
+
+// << 重载, 输出日期, cout << date, operator<<(cout, date)
+std::ostream& operator<<(std::ostream &out, const Date &d)
+{
+    out << d._year << "/" << d._month << "/" << d._day;
+    return out;
+}
+
+// >> 重载, 输入日期
+std::istream& operator>>(std::istream &in, Date &d)
+{
+    std::cout << "请输入年月日: ";  
+    in >> d._year >> d._month >> d._day;
+    return in;
+}

@@ -3,8 +3,12 @@
 // 判断是否为闰年
 bool IsLeapYear(int year);
 
+
+
 class Date
 {
+    friend std::ostream& operator<<(std::ostream &out, const Date &d);
+    friend std::istream& operator>>(std::istream &in, Date &d);
 public:
     // 默认构造, 全缺省, 2000-01-01
     Date(int year = 2000, int month = 1, int day = 1);
@@ -61,3 +65,9 @@ private:
     int _month;
     int _day;
 };
+
+// << 重载, 输出日期
+std::ostream& operator<<(std::ostream &out, const Date &d);
+
+// >> 重载, 输入日期
+std::istream& operator>>(std::istream &in, Date &d);
